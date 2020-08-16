@@ -11,10 +11,12 @@ bot.on('ready', () => {
 
 bot.on('message', msg => {
   if (msg.content === 'ping') {
+    console.info(`Recived PING`);
     msg.reply('pong');
     msg.channel.send('pong');
 
   } else if (msg.content.startsWith('!kick')) {
+    console.info(`Recived !kick`);
     if (msg.mentions.users.size) {
       const taggedUser = msg.mentions.users.first();
       msg.channel.send(`You wanted to kick: ${taggedUser.username}`);
